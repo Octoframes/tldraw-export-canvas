@@ -57,13 +57,12 @@ function SaveButton({ onSave }) {
         top: 10,
         backgroundColor: "lightblue",
       }}
-      onClick={() => {
-        const snapshot = editor.getSvg("hello");
-        console.log(snapshot);
-        const stringified = JSON.stringify(snapshot);
-        // localStorage.setItem("my-editor-snapshot", stringified);
+      onClick={async () => {
+        const snapshot = await editor.getSvg(editor.selectedShapeIds);
+        const stringified = snapshot.outerHTML;
         console.log("Saved!");
         console.log(stringified);
+
         onSave(stringified);
       }}
     >
