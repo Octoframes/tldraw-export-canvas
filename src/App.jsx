@@ -1,6 +1,5 @@
 import { Tldraw, createShapeId } from "@tldraw/tldraw";
 import "@tldraw/tldraw/tldraw.css";
-import { useCallback } from "react";
 
 export default function App() {
   const handleMount = (editor) => {
@@ -10,8 +9,8 @@ export default function App() {
       {
         id,
         type: "geo",
-        x: 128 + Math.random() * 500,
-        y: 128 + Math.random() * 500,
+        x: 128,
+        y: 128,
         props: {
           geo: "rectangle",
           w: 100,
