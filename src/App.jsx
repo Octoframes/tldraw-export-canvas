@@ -39,7 +39,7 @@ function SaveButton({ onSave }) {
         backgroundColor: "lightblue",
       }}
       onClick={() => {
-        const snapshot = editor.store.getSnapshot();
+        const snapshot = editor.getSvg();
         const stringified = JSON.stringify(snapshot);
         localStorage.setItem("my-editor-snapshot", stringified);
         console.log("Saved!");
